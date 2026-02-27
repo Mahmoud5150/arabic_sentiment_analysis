@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 20% 98%;
+    --foreground: 254 37% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 254 37% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 254 37% 10%;
+    --primary: 254 37% 39%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 204 69% 63%;
+    --secondary-foreground: 254 37% 10%;
+    --muted: 270 5% 90%;
+    --muted-foreground: 254 15% 45%;
+    --accent: 204 69% 63%;
+    --accent-foreground: 254 37% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 254 20% 90%;
+    --input: 254 20% 90%;
+    --ring: 254 37% 39%;
+    --radius: 1.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* تحسينات بصرية متقدمة */
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(50px, -80px) scale(1.2); }
+  66% { transform: translate(-40px, 40px) scale(0.8); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 10s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* تدرج ناعم للأزرار */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, #6366f1 100%);
+}
